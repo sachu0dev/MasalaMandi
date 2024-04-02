@@ -80,7 +80,7 @@ const Body = () => {
           onChange={(e) => setUserName(e.target.value)}
         /> */}
       </div>
-      <div className="restaurant-list grid  grid-cols-4 px-[10vw] justify-center items-center flex-wrap gap-4">
+      <div className="restaurant-list flex flex-wrap px-[5vw] justify-center md:justify-center align-middle">
         {filteredRestaurants.map((restarunrant) => (
           <Link
             to={`restaurant/${restarunrant.info.id}`}
