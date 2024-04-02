@@ -1,8 +1,7 @@
+import toast from "react-hot-toast";
 import { FaMinusCircle, FaPlusCircle } from "react-icons/fa";
 import { useDispatch } from "react-redux";
 import { addItem, removeItem } from "../Utils/Redux/cartSlice";
-import { IMG_CDN_URL } from "./constant";
-import toast, { Toaster } from 'react-hot-toast';
 
 const ItemList = ({ items }) => {
   const dispatch = useDispatch();
@@ -10,11 +9,10 @@ const ItemList = ({ items }) => {
   const handleAddItem = (item) => {
     // Dispatch an action
     dispatch(addItem(item));
-    toast.success('Item Added Successfully');
+    toast.success("Item Added Successfully");
   };
   const handleRemoveItem = (id) => {
-
-    toast.error('Item Removed Successfully');
+    toast.error("Item Removed Successfully");
     dispatch(removeItem(id));
   };
 
@@ -52,10 +50,9 @@ const ItemList = ({ items }) => {
                 <div className=" flex flex-col justify-center items-center">
                   <img
                     className="w-[10rem] h-[6rem] object-cover rounded-2xl mb-2"
-                    src={IMG_CDN_URL + item.card.info.imageId}
+                    src={process.env.IMG_CDN_URL + item.card.info.imageId}
                     alt="img not found"
                   />
-
                 </div>
               ) : null}
               <div className=" flex justify-between rounded-lg bg-light-orange text-light-gray font-bold shadow-lg p-2">
@@ -78,9 +75,7 @@ const ItemList = ({ items }) => {
                   <FaPlusCircle />
                 </button>
               </div>
-
             </div>
-
           </div>
         );
       })}

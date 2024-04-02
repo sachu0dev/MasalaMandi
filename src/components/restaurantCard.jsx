@@ -1,6 +1,5 @@
 import { useContext } from "react";
 import UserContext from "../Utils/UserContext";
-import { IMG_CDN_URL } from "./constant";
 
 const RestarunrantCard = (restarunrant) => {
   const { name, cuisines, cloudinaryImageId, avgRating, locality, costForTwo } =
@@ -12,7 +11,7 @@ const RestarunrantCard = (restarunrant) => {
       <div className="img-container h-[200px] relative">
         <img
           className="h-[200px] w-full object-cover rounded-3xl"
-          src={IMG_CDN_URL + cloudinaryImageId}
+          src={process.env.IMG_CDN_URL + cloudinaryImageId}
         />
         <p className="text-light-gray absolute text-3xl font-extrabold bottom-0 right-3 bg-dark-black/60 px-2 rounded-md">
           {costForTwo}

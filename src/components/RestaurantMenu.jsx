@@ -2,16 +2,15 @@ import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import RestaurantCategory from "./RestaurantCategory";
 import Shimmer from "./Shimmer";
-import { FETCH_MENU_URL, IMG_CDN_URL } from "./constant";
 const RestaurantMenu = () => {
   const dummy = "Dummy data";
   const { id } = useParams();
   const [restaurantInfo, setRestaurantInfo] = useState(null);
   const [categories, setCategories] = useState([]);
   const [showIndex, setShowIndex] = useState(0);
-
+  console.log(process.env.FETCH_MENU_URL);
   async function getRestaurantInfo() {
-    const data = await fetch(FETCH_MENU_URL + id);
+    const data = await fetch(process.env.FETCH_MENU_URL + id);
     const info = await data.json();
     const menuList =
       info.data.cards[4].groupedCard.cardGroupMap.REGULAR.cards.filter(
@@ -55,7 +54,7 @@ const RestaurantMenu = () => {
       </div>
       <img
         className="restaurant-img w-full h-[20vh] object-cover rounded-lg"
-        src={IMG_CDN_URL + restaurantInfo.cloudinaryImageId}
+        src={process.env.IMG_CDN_URL + restaurantInfo.cloudinaryImageId}
       />
       <div className="menu-right">
         <p className="menu-header mt-8 text-4xl p-4 flex justify-center items-center">
