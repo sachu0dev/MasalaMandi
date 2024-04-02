@@ -28,7 +28,7 @@ const BillDisplay = ({ items }) => {
                 <h1>
                   ₹
                   {(item.foodCount * item.card.info.price
-                    ? item.card.info.price
+                    ? item.card.info.price / 100
                     : item.card.info.defaultPrice) / 100}
                 </h1>
               </li>
