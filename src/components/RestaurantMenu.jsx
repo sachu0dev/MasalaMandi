@@ -7,6 +7,7 @@ const RestaurantMenu = () => {
   const dummy = "Dummy data";
   const { id } = useParams();
   const userLocation = useSelector((store) => store.userLocation);
+  console.log(userLocation);
   const [restaurantInfo, setRestaurantInfo] = useState(null);
   const [categories, setCategories] = useState([]);
   const [showIndex, setShowIndex] = useState(0);
