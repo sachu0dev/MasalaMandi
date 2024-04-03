@@ -1,6 +1,5 @@
-import { useContext, useState } from "react";
+import { useState } from "react";
 import { Link } from "react-router-dom";
-import UserContext from "../Utils/UserContext.js";
 import { filterData } from "../Utils/helper.js";
 import useOnline from "../Utils/useOnline.jsx";
 import useRestaurants from "../Utils/useRestarants.jsx";

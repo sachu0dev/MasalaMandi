@@ -1,8 +1,5 @@
 import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
-const loggedInUser = () => {
-  return false;
-};
 
 export const Title = () => {
   return (
@@ -33,7 +30,14 @@ export const Header = () => {
             <li>About</li>
           </Link>
           <Link to="/cart">
-            <li className="relative">Cart</li>
+            <li className="relative">
+              Cart{" "}
+              {cart && cart.length === 0 ? null : (
+                <span className="absolute top-[-10px] right-[-20px] text-xl font-bold text-light-orange">
+                  {cart.length}
+                </span>
+              )}
+            </li>
           </Link>
         </ul>
       </div>
