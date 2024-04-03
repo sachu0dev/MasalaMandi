@@ -9,7 +9,6 @@ import RestarunrantCard, { withOpenLabel } from "./restaurantCard.jsx";
 
 const Body = () => {
   const [searchTxt, setSearchTxt] = useState("");
-  const { loggedInUser, setUserName } = useContext(UserContext);
   const {
     allRestaurants,
     setAllRestaurants,

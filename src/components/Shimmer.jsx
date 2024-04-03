@@ -21,7 +21,7 @@ const Shimmer = () => {
   return (
     <>
       <SearchSrimmer />
-      <div className="restaurant-list grid px-[20vh] grid-cols-4 justify-center items-center flex-wrap">
+      <div className="restaurant-list flex flex-wrap px-[5vw] justify-center md:justify-center align-middle">
         {Array(12)
           .fill("")
           .map((e, index) => (
