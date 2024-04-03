@@ -14,6 +14,7 @@ const useProfile = () => {
     setName(json.name);
     setPublicRepos(json.public_repos);
     setImgUrl(json.avatar_url);
+    console.log(json);
   }
   return { name, publicRepos, imgUrl };
 };

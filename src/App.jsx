@@ -1,10 +1,11 @@
-import React, { Suspense, lazy, useContext, useEffect, useState } from "react";
+import React, { Suspense, useContext, useEffect, useState } from "react";
 import ReactDOM from "react-dom/client";
 import { Toaster } from "react-hot-toast";
 import { Provider } from "react-redux";
 import { Outlet, RouterProvider, createBrowserRouter } from "react-router-dom";
 import appStore from "./Utils/Redux/appStore.js";
 import UserContext from "./Utils/UserContext.js";
+import About from "./components/About.jsx";
 import Body from "./components/Body.jsx";
 import Cart from "./components/Cart.jsx";
 import Contact from "./components/Contact.jsx";
@@ -15,10 +16,7 @@ import LandingPage from "./components/LandingPage.jsx";
 import Ordered from "./components/Ordered.jsx";
 import Profile from "./components/Profile.jsx";
 import RestaurantMenu from "./components/RestaurantMenu.jsx";
-import Shimmer from "./components/Shimmer.jsx";
 const root = ReactDOM.createRoot(document.getElementById("root"));
-const Instamart = lazy(() => import("./components/Instamart.jsx"));
-const About = lazy(() => import("./components/About.jsx"));
 
 const AppLayout = () => {
   const [userName, setUserName] = useState();
@@ -90,15 +88,6 @@ const appRouter = createBrowserRouter([
       {
         path: "/cart",
         element: <Cart />,
-      },
-
-      {
-        path: "instamart",
-        element: (
-          <Suspense fallback={<Shimmer />}>
-            <Instamart />
-          </Suspense>
-        ),
       },
     ],
   },
