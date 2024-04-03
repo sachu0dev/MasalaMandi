@@ -3,7 +3,6 @@ import { Link } from "react-router-dom";
 
 const BillDisplay = ({ items }) => {
   const [total, setTotal] = useState(0);
-  console.log(items);
   useEffect(() => {
     let price = 0;
     items.map((item) => {
@@ -27,9 +26,9 @@ const BillDisplay = ({ items }) => {
                 </h1>
                 <h1>
                   ₹
-                  {(item.foodCount * item.card.info.price
-                    ? item.card.info.price / 100
-                    : item.card.info.defaultPrice) / 100}
+                  {item.foodCount * item.card.info.price
+                    ? (item.card.info.price / 100).toFixed(2)
+                    : (item.card.info.defaultPrice / 100).toFixed(2)}
                 </h1>
               </li>
             );

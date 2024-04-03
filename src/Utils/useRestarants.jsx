@@ -4,19 +4,25 @@ const useRestaurants = () => {
   const [allRestaurants, setAllRestaurants] = useState([]);
   const [filteredRestaurants, setFilteredRestaurant] = useState([1]);
 
+  function getCards(json) {
+    const restaurants = json.data.cards.filter((item) => {
+      return (
+        item.card.card.gridElements?.infoWithStyle?.["@type"] ===
+        "type.googleapis.com/swiggy.presentation.food.v2.FavouriteRestaurantInfoWithStyle"
+      );
+    });
+    return restaurants[0].card.card.gridElements.infoWithStyle.restaurants;
+  }
+
   useEffect(() => {
     getRestaurants();
   }, []);
-  console.log(process.env.RESTAURANTS_URL);
   async function getRestaurants() {
     const data = await fetch(process.env.RESTAURANTS_URL);
     const json = await data.json();
-    setFilteredRestaurant(
-      json.data.cards[2]?.card?.card?.gridElements?.infoWithStyle?.restaurants
-    );
-    setAllRestaurants(
-      json.data.cards[2]?.card?.card?.gridElements?.infoWithStyle?.restaurants
-    );
+    const restaurants = getCards(json);
+    setAllRestaurants(restaurants);
+    setFilteredRestaurant(restaurants);
   }
   return {
     allRestaurants,

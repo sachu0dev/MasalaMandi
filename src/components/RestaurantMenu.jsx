@@ -8,7 +8,6 @@ const RestaurantMenu = () => {
   const [restaurantInfo, setRestaurantInfo] = useState(null);
   const [categories, setCategories] = useState([]);
   const [showIndex, setShowIndex] = useState(0);
-  console.log(process.env.FETCH_MENU_URL);
   async function getRestaurantInfo() {
     const data = await fetch(process.env.FETCH_MENU_URL + id);
     const info = await data.json();
