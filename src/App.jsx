@@ -11,6 +11,7 @@ import Contact from "./components/Contact.jsx";
 import Error from "./components/Error.jsx";
 import Footer from "./components/Footer.jsx";
 import { Header } from "./components/Header.jsx";
+import LandingPage from "./components/LandingPage.jsx";
 import Ordered from "./components/Ordered.jsx";
 import Profile from "./components/Profile.jsx";
 import RestaurantMenu from "./components/RestaurantMenu.jsx";
@@ -52,8 +53,14 @@ const appRouter = createBrowserRouter([
     children: [
       {
         path: "/",
+        element: <LandingPage />,
+        errorElement: <Error />,
+      },
+      {
+        path: "/restaurants",
         element: <Body />,
       },
+
       {
         path: "/about",
         element: (
@@ -77,7 +84,7 @@ const appRouter = createBrowserRouter([
         element: <Ordered />,
       },
       {
-        path: "restaurant/:id",
+        path: "/restaurants/restaurant/:id",
         element: <RestaurantMenu />,
       },
       {

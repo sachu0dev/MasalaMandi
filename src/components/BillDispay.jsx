@@ -40,7 +40,7 @@ const BillDisplay = ({ items }) => {
         </div>
         <Link
           to="/ordered"
-          className="bg-light-cream p-2 rounded-lg text-dark-black my-4 "
+          className="inline-block bg-light-cream p-2 rounded-lg text-dark-black my-4 "
         >
           Check Out
         </Link>

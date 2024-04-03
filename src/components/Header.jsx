@@ -18,7 +18,7 @@ export const Header = () => {
       <Title />
       <div className="nav-items">
         <ul className="flex gap-12  text-md">
-          <Link to="/">
+          <Link to="/restaurants">
             <li>Restaurants</li>
           </Link>
           <Link to="contact">
