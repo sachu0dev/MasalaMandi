@@ -1,15 +1,19 @@
 import { useEffect, useState } from "react";
+import { useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
 import RestaurantCategory from "./RestaurantCategory";
 import Shimmer from "./Shimmer";
 const RestaurantMenu = () => {
   const dummy = "Dummy data";
   const { id } = useParams();
+  const userLocation = useSelector((store) => store.userLocation);
   const [restaurantInfo, setRestaurantInfo] = useState(null);
   const [categories, setCategories] = useState([]);
   const [showIndex, setShowIndex] = useState(0);
   async function getRestaurantInfo() {
-    const data = await fetch(process.env.FETCH_MENU_URL + id);
+    const data = await fetch(
+      `${process.env.FETCH_MENU_URL}&lat=${userLocation.latitude}&lng=${userLocation.longitude}&restaurantId=${id}`
+    );
     const info = await data.json();
     const menuList =
       info.data.cards[4].groupedCard.cardGroupMap.REGULAR.cards.filter(
