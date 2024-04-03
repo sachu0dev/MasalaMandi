@@ -41,7 +41,7 @@ const Body = () => {
               }}
             />
             <button
-              className="search-btn text-[1.2rem] w-20 h-12 bg-light-gray rounded-full bg-light-orange text-light-cream"
+              className="search-btn text-[1.2rem] w-20 h-12  rounded-full bg-light-orange text-light-cream"
               onClick={handleSearch}
             >
               <i class="fa-solid fa-magnifying-glass"></i>
@@ -66,7 +66,7 @@ const Body = () => {
             }}
           />
           <button
-            className="search-btn text-[1.2rem] w-20 h-12 bg-light-gray rounded-full bg-light-orange text-light-cream"
+            className="search-btn text-[1.2rem] w-20 h-12 rounded-full bg-light-orange text-light-cream"
             onClick={handleSearch}
           >
             <i class="fa-solid fa-magnifying-glass"></i>
