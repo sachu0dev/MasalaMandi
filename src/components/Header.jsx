@@ -3,9 +3,8 @@ import { Link } from "react-router-dom";
 
 export const Title = () => {
   return (
-    <a href="/" className="logo text-xl font-semibold  ">
-      <p>Mamsala</p>
-      <p>Mandi</p>
+    <a href="/" className="logo text-4xl font-semibold  ">
+      Masala Mandi
     </a>
   );
 };
