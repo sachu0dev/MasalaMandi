@@ -10,8 +10,15 @@ const Contact = () => {
         />
         <input
           type="text"
+          placeholder="email"
+          className="border border-black p-2 m-2 rounded-lg"
+        />
+        <textarea
+          type="text"
           placeholder="message"
           className="border border-black p-2 m-2 rounded-lg"
+          rows="4"
+          cols="50"
         />
         <button className="bg-black text-light-gray p-2 m-2 rounded-lg">
           Submit
